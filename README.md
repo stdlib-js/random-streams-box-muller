@@ -539,6 +539,25 @@ $ random-box-muller -n 10 --seed 1234
 
 <!-- /.references -->
 
+<!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
+
+<section class="related">
+
+* * *
+
+## See Also
+
+-   [`@stdlib/random/base/box-muller`][@stdlib/random/base/box-muller]: normally distributed pseudorandom numbers using the Box-Muller transform.
+-   [`@stdlib/random/iter/box-muller`][@stdlib/random/iter/box-muller]: create an iterator for generating pseudorandom numbers drawn from a standard normal distribution using the Box-Muller transform.
+-   [`@stdlib/random/streams/improved-ziggurat`][@stdlib/random/streams/improved-ziggurat]: create a readable stream for generating pseudorandom numbers drawn from a standard normal distribution using the Improved Ziggurat algorithm.
+-   [`@stdlib/random/streams/randn`][@stdlib/random/streams/randn]: create a readable stream for generating pseudorandom numbers drawn from a standard normal distribution.
+
+</section>
+
+<!-- /.related -->
+
+<!-- Section for all links. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
+
 
 <section class="main-repo" >
 
@@ -604,7 +623,6 @@ Copyright &copy; 2016-2021. The Stdlib [Authors][stdlib-authors].
 
 [@stdlib/array/uint32]: https://github.com/stdlib-js/array-uint32
 
-[@stdlib/random/base/box-muller]: https://github.com/stdlib-js/random-base-box-muller
 
 [@box:1958]: http://dx.doi.org/10.1214/aoms/1177706645
 
@@ -615,6 +633,18 @@ Copyright &copy; 2016-2021. The Stdlib [Authors][stdlib-authors].
 [@marsaglia:1964a]: http://dx.doi.org/10.1137/1006063
 
 [@thomas:2007]: http://dx.doi.org/10.1145/1287620.128762
+
+<!-- <related-links> -->
+
+[@stdlib/random/base/box-muller]: https://github.com/stdlib-js/random-base-box-muller
+
+[@stdlib/random/iter/box-muller]: https://github.com/stdlib-js/random-iter-box-muller
+
+[@stdlib/random/streams/improved-ziggurat]: https://github.com/stdlib-js/random-streams-improved-ziggurat
+
+[@stdlib/random/streams/randn]: https://github.com/stdlib-js/random-streams-randn
+
+<!-- </related-links> -->
 
 </section>
 
