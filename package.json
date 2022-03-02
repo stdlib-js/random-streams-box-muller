@@ -1,0 +1,47 @@
+{
+  "name": "@stdlib/random-streams-box-muller",
+  "version": "0.0.7",
+  "description": "Create a readable stream for generating pseudorandom numbers drawn from a standard normal distribution using the Box-Muller transform.",
+  "license": "Apache-2.0",
+  "main": "./bundle.js",
+  "homepage": "https://stdlib.io",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/stdlib-js/random-streams-box-muller.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stdlib-js/stdlib/issues"
+  },
+  "keywords": [
+    "stdlib",
+    "stdmath",
+    "mathematics",
+    "math",
+    "statistics",
+    "stats",
+    "prng",
+    "rng",
+    "pseudorandom",
+    "random",
+    "rand",
+    "standard",
+    "normal",
+    "gaussian",
+    "continuous",
+    "generator",
+    "bell",
+    "box",
+    "muller",
+    "box-muller",
+    "transform",
+    "marsaglia",
+    "readable",
+    "stream",
+    "seed",
+    "seedable"
+  ],
+  "funding": {
+    "type": "patreon",
+    "url": "https://www.patreon.com/athan"
+  }
+}
