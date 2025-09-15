@@ -35,33 +35,38 @@ limitations under the License.
 
 > Create a [readable stream][readable-stream] for generating pseudorandom numbers drawn from a [standard normal][normal] distribution using the [Box-Muller transform][@stdlib/random/base/box-muller].
 
-<section class="installation">
 
-## Installation
-
-```bash
-npm install @stdlib/random-streams-box-muller
-```
-
-Alternatively,
-
--   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
--   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
--   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
--   To use as a general utility for the command line, install the corresponding [CLI package][cli-section] globally.
-
-The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
-
-To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
-
-</section>
 
 <section class="usage">
 
 ## Usage
 
+To use in Observable,
+
 ```javascript
-var randomStream = require( '@stdlib/random-streams-box-muller' );
+randomStream = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/random-streams-box-muller@umd/browser.js' )
+```
+
+To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
+
+```javascript
+var randomStream = require( 'path/to/vendor/umd/random-streams-box-muller/index.js' )
+```
+
+To include the bundle in a webpage,
+
+```html
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-streams-box-muller@umd/browser.js"></script>
+```
+
+If no recognized module system is present, access bundle contents via the global scope:
+
+```html
+<script type="text/javascript">
+(function () {
+    window.randomStream;
+})();
+</script>
 ```
 
 <a name="random-stream"></a>
@@ -443,9 +448,14 @@ function onState( state ) {
 
 <!-- eslint no-undef: "error" -->
 
-```javascript
-var inspectStream = require( '@stdlib/streams-node-inspect-sink' );
-var randomStream = require( '@stdlib/random-streams-box-muller' );
+```html
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/streams-node-inspect-sink@umd/browser.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-streams-box-muller@umd/browser.js"></script>
+<script type="text/javascript">
+(function () {
 
 function log( v ) {
     console.log( v.toString() );
@@ -464,6 +474,11 @@ opts = {
 var iStream = inspectStream( opts, log );
 
 stream.pipe( iStream );
+
+})();
+</script>
+</body>
+</html>
 ```
 
 </section>
@@ -472,80 +487,7 @@ stream.pipe( iStream );
 
 <!-- Section for describing a command-line interface. -->
 
-* * *
 
-<section class="cli">
-
-## CLI
-
-<section class="installation">
-
-## Installation
-
-To use as a general utility, install the CLI package globally
-
-```bash
-npm install -g @stdlib/random-streams-box-muller-cli
-```
-
-</section>
-<!-- CLI usage documentation. -->
-
-
-<section class="usage">
-
-### Usage
-
-```text
-Usage: random-box-muller [options]
-
-Options:
-
-  -h,  --help               Print this message.
-  -V,  --version            Print the package version.
-       --sep sep            Separator used to join streamed data. Default: '\n'.
-  -n,  --iter iterations    Number of pseudorandom numbers.
-       --seed seed          Pseudorandom number generator seed.
-       --state filepath     Path to a file containing the pseudorandom number
-                            generator state.
-       --snapshot filepath  Output file path for saving the pseudorandom number
-                            generator state upon exit.
-```
-
-</section>
-
-<!-- /.usage -->
-
-<!-- CLI usage notes. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
-
-<section class="notes">
-
-### Notes
-
--   In accordance with POSIX convention, a trailing newline is **always** appended to generated output prior to exit.
--   Specifying a "snapshot" file path is useful when wanting to resume pseudorandom number generation due to, e.g., a downstream failure in an analysis pipeline. Before exiting, the process will store the pseudorandom number generator state in a file specified according to a provided file path. Upon loading a snapshot (state), the process will generate pseudorandom numbers starting from the loaded state, thus avoiding having to seed and replay an entire analysis.
-
-</section>
-
-<!-- /.notes -->
-
-<!-- CLI usage examples. -->
-
-<section class="examples">
-
-### Examples
-
-```bash
-$ random-box-muller -n 10 --seed 1234
-```
-
-</section>
-
-<!-- /.examples -->
-
-</section>
-
-<!-- /.cli -->
 
 * * *
 
@@ -664,7 +606,7 @@ Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
 
 [normal]: https://en.wikipedia.org/wiki/Normal_distribution
 
-[@stdlib/array/uint32]: https://github.com/stdlib-js/array-uint32
+[@stdlib/array/uint32]: https://github.com/stdlib-js/array-uint32/tree/umd
 
 [@box:1958]: http://dx.doi.org/10.1214/aoms/1177706645
 
@@ -678,13 +620,13 @@ Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
 
 <!-- <related-links> -->
 
-[@stdlib/random/base/box-muller]: https://github.com/stdlib-js/random-base-box-muller
+[@stdlib/random/base/box-muller]: https://github.com/stdlib-js/random-base-box-muller/tree/umd
 
-[@stdlib/random/iter/box-muller]: https://github.com/stdlib-js/random-iter-box-muller
+[@stdlib/random/iter/box-muller]: https://github.com/stdlib-js/random-iter-box-muller/tree/umd
 
-[@stdlib/random/streams/improved-ziggurat]: https://github.com/stdlib-js/random-streams-improved-ziggurat
+[@stdlib/random/streams/improved-ziggurat]: https://github.com/stdlib-js/random-streams-improved-ziggurat/tree/umd
 
-[@stdlib/random/streams/randn]: https://github.com/stdlib-js/random-streams-randn
+[@stdlib/random/streams/randn]: https://github.com/stdlib-js/random-streams-randn/tree/umd
 
 <!-- </related-links> -->
 
